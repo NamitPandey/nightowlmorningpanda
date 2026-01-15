@@ -1,0 +1,8 @@
+{
+    "SECRET_KEY": "django-insecure-tk8hf&ruvb=i+w*pe9_r0h(f@ztt01c=&m5g5ooqehnnz(n)ox",
+    "INSTALLED_APPS":[
+        "nomp",
+        "heena"
+    ],
+    "MEDIA_URL":"/media/"
+}
