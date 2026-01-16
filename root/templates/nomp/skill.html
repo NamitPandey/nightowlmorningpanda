@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Skills — Silent Work. Intelligent Results.</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/highcharts-more.js"></script>
+
+<style>
+:root {
+  --bg:#ffffff;
+  --text:#111;
+  --muted:#666;
+  --border:#e5e5e5;
+  --accent:#0071e3;
+}
+
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;
+}
+
+body { background:var(--bg); color:var(--text); }
+
+.navbar {
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(255,255,255,0.8);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--border);
+  z-index:999;
+}
+
+.nav-container {
+  max-width:1200px;
+  margin:auto;
+  padding:18px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo img { height:32px; }
+
+.nav-links { display:flex; gap:30px; }
+.nav-links a { font-size:14px; position:relative; }
+
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0; bottom:-6px;
+  width:0; height:2px;
+  background:#111;
+  transition:.3s;
+}
+.nav-links a:hover::after{width:100%;}
+
+/* ===== HERO ===== */
+
+.hero {
+  padding:180px 20px 100px;
+  text-align:center;
+}
+
+.hero h1 {
+  font-size:56px;
+  font-weight:600;
+  letter-spacing:-1px;
+}
+
+.hero p {
+  font-size:18px;
+  color:var(--muted);
+  margin-top:12px;
+}
+
+/* ===== SECTIONS ===== */
+
+.section {
+  max-width:1200px;
+  margin:auto;
+  padding:80px 20px;
+}
+
+.section h2 {
+  font-size:34px;
+  margin-bottom:10px;
+}
+
+.section p {
+  color:var(--muted);
+  margin-bottom:40px;
+}
+
+.chart-box {
+  background:#f8f8f8;
+  border-radius:28px;
+  padding:40px;
+  box-shadow:0 40px 80px rgba(0,0,0,0.06);
+  opacity:0;
+  transform:translateY(80px);
+  transition:1s cubic-bezier(.2,.8,.2,1);
+}
+
+.chart-box.visible {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+  border-top:1px solid var(--border);
+  background:#f5f5f7;
+  padding:70px 20px;
+  margin-top:80px;
+}
+
+.footer-container {
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:40px;
+}
+
+.footer-col h4 {
+  font-size:14px;
+  font-weight:600;
+  margin-bottom:15px;
+}
+
+.footer-col a {
+  display:block;
+  font-size:13px;
+  color:#555;
+  margin-bottom:8px;
+}
+
+.footer-bottom {
+  max-width:1200px;
+  margin:40px auto 0;
+  font-size:12px;
+  color:#888;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+}
+
+@media(max-width:768px){
+  .hero h1{font-size:40px;}
+  .nav-links{display:none;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="night_owl_morning_panda_logo_transparent.png">
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="resume.html">Resume</a>
+      <a href="skills.html">Skills</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Skills & Expertise</h1>
+  <p>Engineering intelligence with discipline and precision.</p>
+</section>
+
+<!-- CORE ENGINEERING -->
+<section class="section">
+  <h2>Core Engineering</h2>
+  <p>Strong foundations for scalable intelligent systems.</p>
+  <div class="chart-box reveal" id="coreChart"></div>
+</section>
+
+<!-- DATA SCIENCE -->
+<section class="section">
+  <h2>Data Science Stack</h2>
+  <p>Advanced analytics, modeling and experimentation.</p>
+  <div class="chart-box reveal" id="dsChart"></div>
+</section>
+
+<!-- ANALYTICS -->
+<section class="section">
+  <h2>Analytics & BI</h2>
+  <p>Insight-driven decision making.</p>
+  <div class="chart-box reveal" id="biChart"></div>
+</section>
+
+<!-- CLOUD -->
+<section class="section">
+  <h2>Cloud & Systems</h2>
+  <p>Reliable, secure and scalable platforms.</p>
+  <div class="chart-box reveal" id="cloudChart"></div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <a href="#">Home</a>
+      <a href="#">Resume</a>
+      <a href="#">Skills</a>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="#">LinkedIn</a>
+      <a href="#">GitHub</a>
+    </div>
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div>© 2026 Silent Work. Intelligent Results.</div>
+    <div>Designed with precision.</div>
+  </div>
+</footer>
+
+<script>
+// Reveal animation
+const reveals = document.querySelectorAll('.reveal');
+
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      loadCharts();
+    }
+  });
+},{threshold:0.3});
+
+reveals.forEach(el=>observer.observe(el));
+
+// Load charts once
+let loaded = false;
+function loadCharts(){
+  if(loaded) return;
+  loaded = true;
+
+  // Core Engineering - Column
+  Highcharts.chart('coreChart',{
+    chart:{type:'column',backgroundColor:'transparent'},
+    title:{text:null},
+    xAxis:{categories:['Python','SQL','System Design','Algorithms']},
+    yAxis:{max:100,title:{text:'Proficiency'}},
+    series:[{data:[92,88,85,82]}],
+    colors:['#0071e3'], credits:{enabled:false}, legend:{enabled:false}
+  });
+
+  // Data Science - Radar
+  Highcharts.chart('dsChart',{
+    chart:{polar:true,type:'line',backgroundColor:'transparent'},
+    title:{text:null},
+    xAxis:{categories:['ML','DL','Stats','NLP','CV'],tickmarkPlacement:'on'},
+    yAxis:{min:0,max:100},
+    series:[{data:[88,80,90,78,75],pointPlacement:'on'}],
+    colors:['#34c759'], credits:{enabled:false}, legend:{enabled:false}
+  });
+
+  // BI - Bar
+  Highcharts.chart('biChart',{
+    chart:{type:'bar',backgroundColor:'transparent'},
+    title:{text:null},
+    xAxis:{categories:['Power BI','Tableau','Excel','SQL Dashboards']},
+    yAxis:{max:100},
+    series:[{data:[90,85,88,86]}],
+    colors:['#ff9500'], credits:{enabled:false}, legend:{enabled:false}
+  });
+
+  // Cloud - Spline
+  Highcharts.chart('cloudChart',{
+    chart:{type:'spline',backgroundColor:'transparent'},
+    title:{text:null},
+    xAxis:{categories:['AWS','Docker','CI/CD','Linux']},
+    yAxis:{max:100},
+    series:[{data:[85,80,78,88]}],
+    colors:['#af52de'], credits:{enabled:false}, legend:{enabled:false}
+  });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+/* Apple Footer */
+.apple-footer {
+    background: #f5f5f7;
+    padding: 60px 40px 30px;
+    font-size: 13px;
+    color: #6e6e73;
+    border-top: 1px solid #d2d2d7;
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #d2d2d7;
+  }
+  
+  .footer-column h4 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1d1d1f;
+    margin-bottom: 12px;
+  }
+  
+  .footer-column a {
+    display: block;
+    color: #6e6e73;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.2s ease;
+  }
+  
+  .footer-column a:hover {
+    color: #1d1d1f;
+    text-decoration: underline;
+  }
+  
+  /* Legal Bar */
+  .footer-legal {
+    max-width: 1200px;
+    margin: auto;
+    padding-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+  }
+  
+  .legal-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .legal-links a {
+    color: #6e6e73;
+    text-decoration: none;
+  }
+  
+  .legal-links a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Dark Mode */
+  body.dark .apple-footer {
+    background: #0b1026;
+    border-top: 1px solid #222;
+    color: #aaa;
+  }
+  
+  body.dark .footer-column h4 {
+    color: #fff;
+  }
+  
+  body.dark .footer-column a,
+  body.dark .legal-links a {
+    color: #aaa;
+  }
+  
+  body.dark .footer-content {
+    border-bottom: 1px solid #222;
+  }
+  
