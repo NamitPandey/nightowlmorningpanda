@@ -13,3 +13,7 @@ def resume(request):
 def skill(request):
 
     return render(request, "nomp/skill.html", context={})
+
+def bhavna(request):
+
+    return render(request, "nomp/bhavna.html", context={})

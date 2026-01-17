@@ -1,0 +1,275 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Bhavna</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .fall {
+      position: absolute;
+      top: -80px;
+      animation: fall linear infinite;
+      will-change: transform;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-80px); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(110vh); opacity: 0; }
+    }
+
+    .float { animation: float 5s ease-in-out infinite; }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+
+    .typing::after { content: '|'; animation: blink 1s infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      animation: confetti linear infinite;
+      will-change: transform;
+    }
+
+    @keyframes confetti {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Twinkle stars */
+    .twinkle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: twinkle 2.5s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes twinkle {
+      0% { transform: scale(0.5); opacity: 0.3; }
+      50% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(0.5); opacity: 0.3; }
+    }
+  
+        /* Birthday Banner Image */
+    .birthday-banner {
+      width: 100%;
+      max-width: 520px;
+      filter: drop-shadow(0 12px 24px rgba(0,0,0,0.35));
+      animation: bannerFloat 4s ease-in-out infinite;
+      background: transparent;
+    }
+
+    @keyframes bannerFloat {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+
+    /* Bhavna Name Styling */
+    .bhavna-name {
+      font-family: 'Brush Script MT', cursive;
+      font-size: 4.5rem;
+      color: #7b2cff;
+      text-align: center;
+      animation: glowPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes glowPulse {
+      0% {
+        text-shadow: 0 0 5px #ffffff, 0 0 15px #ffb3c1, 0 0 30px #ff7eb3, 0 0 45px #ff758c;
+        transform: scale(1);
+      }
+      50% {
+        text-shadow: 0 0 10px #ffffff, 0 0 25px #fbc2eb, 0 0 50px #a18cd1, 0 0 80px #6a11cb;
+        transform: scale(1.05);
+      }
+      100% {
+        text-shadow: 0 0 5px #ffffff, 0 0 15px #ffb3c1, 0 0 30px #ff7eb3, 0 0 45px #ff758c;
+        transform: scale(1);
+      }
+    }
+      to { text-shadow: 0 0 30px #a18cd1, 0 0 60px #fbc2eb, 0 0 80px #fad0c4; }
+    }
+      to { text-shadow: 0 0 20px #a18cd1, 0 0 40px #fbc2eb; }
+    }
+  </style>
+</head>
+
+<body class="h-screen w-screen flex items-center justify-center">
+
+<!-- Background falling items for Screen 1 -->
+<div id="bgFalls" class="absolute inset-0"></div>
+<div id="twinkles1" class="absolute inset-0"></div>
+
+<!-- Screen 1 -->
+<div id="screen1" class="relative z-10 text-center space-y-6 px-4">
+  <h1 class="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">A Sweet Surprise for Bhavna 🎉</h1>
+  <p class="text-white/90">Tap below to begin the magic ✨</p>
+  <button id="startBtn" class="px-10 py-3 bg-pink-600 text-white rounded-full text-xl shadow-xl hover:bg-pink-700 transition animate-bounce">Start</button>
+</div>
+
+<!-- Screen 2 -->
+<div id="screen2" class="hidden relative z-10 text-center space-y-6 max-w-xl px-4">
+  <!-- Birthday Banner GIF -->
+  <div class="relative mx-auto w-full max-w-lg flex justify-center">
+    <img src="{% static 'img/birthday_banner.png' %}" alt="Happy Birthday Banner" class="birthday-banner" />
+  </div>
+
+  <!-- Bhavna Name -->
+  <h2 class="bhavna-name mt-6">Bhavna</h2>
+
+  <div class="bg-white/70 backdrop-blur-md p-6 rounded-2xl shadow-xl">
+    <p id="message" class="text-lg text-gray-800 typing"></p>
+  </div>
+
+  <div class="flex justify-center space-x-6 text-4xl">
+    <span class="float">🎂</span>
+    <span class="float">🍫</span>
+    <span class="float">🌸</span>
+    <span class="float">🧿</span>
+  </div>
+</div>
+
+<!-- Falling items for Screen 2 -->
+<div id="screen2Falls" class="absolute inset-0 hidden"></div>
+<div id="twinkles2" class="absolute inset-0 hidden"></div>
+
+<audio id="bgMusic" loop preload="auto" playsinline>
+  <source src="{% static 'media/for_bhavna_smile.mp3' %}" type="audio/mpeg">
+</audio>
+
+<script>
+  const bgFalls = document.getElementById('bgFalls');
+  const screen1 = document.getElementById('screen1');
+  const screen2 = document.getElementById('screen2');
+  const screen2Falls = document.getElementById('screen2Falls');
+  const twinkles1 = document.getElementById('twinkles1');
+  const twinkles2 = document.getElementById('twinkles2');
+  const bgMusic = document.getElementById('bgMusic');
+  const startBtn = document.getElementById('startBtn');
+
+  // OVERLOADED falling party items for Screen 1 (no face emojis)
+  function createBackgroundFalls() {
+    const count = 100;
+    const emojis = ['🎉','🎈','🎊','🎁','🌟', '🪅'];
+    for (let i = 0; i < count; i++) {
+      const item = document.createElement('div');
+      item.className = 'fall text-3xl';
+      item.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+      item.style.left = Math.random() * 100 + 'vw';
+      item.style.animationDuration = 3 + Math.random() * 3 + 's';
+      item.style.animationDelay = Math.random() * 2 + 's';
+      bgFalls.appendChild(item);
+    }
+  }
+
+  // Falling evil eyes + party for Screen 2
+  function createScreen2Falls() {
+    const count = 190;
+    const emojis = ['🧿','🎊','🌟','🎉','🍫','💐', '🧸'];
+    for (let i = 0; i < count; i++) {
+      const item = document.createElement('div');
+      item.className = 'fall text-3xl';
+      item.innerText = emojis[Math.floor(Math.random()*emojis.length)];
+      item.style.left = Math.random() * 100 + 'vw';
+      item.style.animationDuration = 3 + Math.random() * 3 + 's';
+      item.style.animationDelay = Math.random() * 2 + 's';
+      screen2Falls.appendChild(item);
+    }
+  }
+
+  // Twinkle stars
+  function createTwinkles(container, count) {
+    for (let i = 0; i < count; i++) {
+      const t = document.createElement('div');
+      t.className = 'twinkle';
+      t.style.left = Math.random() * 100 + 'vw';
+      t.style.top = Math.random() * 100 + 'vh';
+      t.style.animationDelay = Math.random() * 3 + 's';
+      container.appendChild(t);
+    }
+  }
+
+  createBackgroundFalls();
+  createTwinkles(twinkles1, 40);
+
+  startBtn.addEventListener('click', startSurprise);
+
+  function startSurprise() {
+    screen1.classList.add('hidden');
+    bgFalls.classList.add('hidden');
+    twinkles1.classList.add('hidden');
+
+    screen2.classList.remove('hidden');
+    screen2Falls.classList.remove('hidden');
+    twinkles2.classList.remove('hidden');
+
+    // Start music after user interaction
+    bgMusic.currentTime = 0;
+    bgMusic.play().catch(() => {});
+
+    createScreen2Falls();
+    createTwinkles(twinkles2, 50);
+    startTyping();
+    launchConfetti();
+  }
+
+  const messageText = "Bhavna, your smile blossoms the floor and your heart lights up every room. You care for everyone and spread warmth wherever you go. May your life be filled with joy, peace, dark chocolates, sweet surprises, and beautiful moments. Happy Birthday. 🌸🍫✨";
+
+  let i = 0;
+  function startTyping() {
+    const msg = document.getElementById('message');
+    msg.textContent = '';
+    i = 0;
+    const interval = setInterval(() => {
+      msg.textContent += messageText.charAt(i);
+      i++;
+      if (i >= messageText.length) clearInterval(interval);
+    }, 45);
+  }
+
+  function launchConfetti() {
+    const count = 80;
+    for (let i = 0; i < count; i++) {
+      const conf = document.createElement('div');
+      conf.className = 'confetti';
+      conf.style.left = Math.random() * 100 + 'vw';
+      conf.style.top = '-40px';
+      conf.style.backgroundColor = `hsl(${Math.random() * 360}, 80%, 60%)`;
+      conf.style.animationDuration = 2.5 + Math.random() * 3 + 's';
+      conf.style.animationDelay = Math.random() * 2 + 's';
+      document.body.appendChild(conf);
+    }
+  }
+</script>
+</body>
+</html>

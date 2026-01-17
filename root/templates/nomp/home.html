@@ -1,6 +1,16 @@
 {% extends "nomp/base.html" %}
 {% load static %}
 {% block main %}
+
+<style>
+  .logo_nomp {
+    max-width: 400px;   /* or any size you want */
+    width: 100%;
+    height: auto;      /* keeps ratio */
+    display: block;
+    margin: 0 auto;
+  }
+</style>
 <!-- Hero -->
 <header>
   <h1>Silent Work. Intelligent Results.</h1>
@@ -8,7 +18,7 @@
     Turning data into intelligence. Building systems with discipline and precision.
   </p>
   <div class="hero-image-container">
-    <img src="{% static 'img/nomp_logo_main.png' %}" alt="Night Owl Morning Panda Logo">
+    <img class="logo_nomp" src="{% static 'img/nomp_logo_main.png' %}" alt="Night Owl Morning Panda Logo">
   </div>
 </header>
 
