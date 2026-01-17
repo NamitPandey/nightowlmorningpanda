@@ -1,118 +1,71 @@
-{% load static %}
+{% load static%}
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-            <meta charset="utf-8">
-            <title>Pigra - Personal Portfolio Website Template</title>
-            <meta content="width=device-width, initial-scale=1.0" name="viewport">
-            <meta content="" name="keywords">
-            <meta content="" name="description">
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <title>Pigra - Personal Portfolio Website Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
 
-            <!-- Google Web Fonts -->
-            <link rel="preconnect" href="https://fonts.googleapis.com/">
-            <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-            <link href="{% static 'resume/css2.css' %}" rel="stylesheet">
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        <link href="{% static 'resume/css2.css' %}" rel="stylesheet">
 
-            <!-- Icon Font Stylesheet -->
-            <link rel="stylesheet" href="{% static 'resume/all.css' %}">
-            <link href="{% static 'resume/bootstrap-icons.css' %}" rel="stylesheet">
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="{% static 'resume/all.css' %}">
+        <link href="{% static 'resume/bootstrap-icons.css' %}" rel="stylesheet">
 
-            <!-- Libraries Stylesheet -->
-            <link rel="stylesheet" href="{% static 'resume/animate.min.css' %}">
-            <link href="{% static 'resume/lightbox.min.css' %}" rel="stylesheet">
-            <link href="{% static 'resume/owl.carousel.min.css' %}" rel="stylesheet">
-            
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="{% static 'resume/animate.min.css' %}">
+        <link href="{% static 'resume/lightbox.min.css' %}" rel="stylesheet">
+        <link href="{% static 'resume/owl.carousel.min.css' %}" rel="stylesheet">
 
-            <!-- Customized Bootstrap Stylesheet -->
-            <link href="{% static 'resume/bootstrap.min.css' %}" rel="stylesheet">
 
-            <!-- Template Stylesheet -->
-            <link href="{% static 'resume/style.css' %}" rel="stylesheet">
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="{% static 'resume/bootstrap.min.css' %}" rel="stylesheet">
 
-            <link href="{% static 'css/footer.css' %}" rel="stylesheet">
-            <link href="{% static 'css/home.css' %}" rel="stylesheet">
+        <!-- Template Stylesheet -->
+        <link href="{% static 'resume/style.css' %}" rel="stylesheet">
     </head>
-    <style>
-        html, body {
-            width: 100%;
-            overflow-x: hidden;
-        }
-        
-        #nompHome .container {
-            max-width: 100%;
-            padding-left: 0;
-            padding-right: 0;
-        }
-        #nompHome .row {
-            margin-left: 0;
-            margin-right: 0;
-        }
-        
-        #nompHome [class*="col-"] {
-            padding-left: 0;
-            padding-right: 0;
-        }
-        #nompHome {
-            width: 100vw;
-            overflow: hidden;
-        }
-        
-    </style>
+
     <body>
-        <div class="navbar" id="navbar" style="color:black;">
-            <div class="nav-container">
-          
-              <!-- Brand -->
-              <div class="brand">
-                <img src="{% static 'img/nomp_logo_main.png' %}" alt="Night Owl Morning Panda Logo">
-                <span>Night Owl Morning Panda</span>
-              </div>
-          
-              <!-- Desktop Links -->
-              <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="{% url 'nomp:resume' %}">Resume</a>
-                <a href="#recipes">Recipes</a>
-                <a href="#contact">Contact</a>
-                {% comment %} <span class="toggle" id="themeToggle">☀️</span> {% endcomment %}
-              </div>
-          
-              <!-- Mobile Hamburger -->
-              <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-          
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
             </div>
-          </div>
-          
-          <!-- Mobile Menu -->
-          <div class="mobile-menu" id="mobileMenu">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#resume">Resume</a>
-            <a href="#recipes">Recipes</a>
-            <a href="#contact">Contact</a>
-            {% comment %} <span class="toggle" id="themeToggleMobile">☀️ Light Mode</span> {% endcomment %}
-          </div>
+        </div>
+        <!-- Spinner End -->
+
+
+        <!-- Navbar Start -->
+        <div class="container-fluid nav-section border-0">
+            <nav class="navbar navbar-light">
+                <div class="navbar-nav flex-column">
+                    <a href="#pigraHome" class="nav-item nav-link active"><span class="fa fa-home"></span> Home</a>
+                    <a href="#pigraAbout" class="nav-item nav-link"><span class="far fa-address-card"></span> About</a>
+                    <a href="#pigraService" class="nav-item nav-link"><span class="fab fa-servicestack"></span> Service</a>
+                    <a href="#pigraPortfolio" class="nav-item nav-link"><span class="fa fa-blog"></span> Portfolio</a>
+                    <a href="#pigraContact" class="nav-item nav-link"><span class="fas fa-address-book"></span> Contact</a>
+                </div>
+            </nav>
+        </div>
         <!-- Navbar End -->
 
         <!-- Header Start -->
-        <div class="container-fluid" id="nompHome" style="margin-top:3%;">
+        <div class="container-fluid" id="pigraHome">
             <div class="container">
                 <div class="row g-0">
                     <div class="col-12 col-lg-3">
                         <div class="header-content bg-dark h-100 pt-6 pe-6 pb-6">
-                            <a href="{% url 'nomp:home' %}" class="navbar-brand d-inline-flex pb-5 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                                <h1 class="display-6 text-white mb-0">NomP</h1>
+                            <a href="https://demo.htmlcodex.com/3433/Pigra/index.html" class="navbar-brand d-inline-flex pb-5 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                                <h1 class="display-6 text-white mb-0">Pigra</h1>
                             </a>
                             <div class="text-start d-flex flex-column justify-content-center wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
-                                <p class="text-white sub-title">👋 Hello I'm Namit</p>
+                                <p class="text-white sub-title">👋 Hello I'm Mezbah</p>
                                 <h1 class="display-6 text-white mb-0">Creative Designer Based in USA</h1>
                             </div>
                         </div>
@@ -121,11 +74,11 @@
                         <div class="header-img d-flex h-100 pt-6 ps-6 pb-6">
                             <div class="row g-5">
                                 <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
-                                    <div class="bg-light p-4" style="max-width: 50%; border-radius: 68% 32% 100% 0% / 0% 75% 25% 100%;">
+                                    <div class="bg-light p-4" style="border-radius: 68% 32% 100% 0% / 0% 75% 25% 100%;">
                                         <img src="{% static 'resume/profile.jpeg' %}" class="img-fluid w-100" style="border-radius: 68% 32% 100% 0% / 0% 75% 25% 100%;" alt="Image">
                                     </div>
                                 </div>
-                                <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.3s" style="margin-left:-8%;visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
+                                <div class="col-xl-6 wow fadeInUp" data-wow-delay="0.3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
                                     <h1 class="display-6 mb-4">Junior UI/UX Designer Developer</h1>
                                     <p class="mb-4">Lorem ipsum dolor 
 sit amet consectetur adipisicing elit. Aperiam sed animi et laboriosam 
@@ -164,7 +117,7 @@ facere tempora rerum, eligendi veritatis nesciunt cum?
 
 
         <!-- About Start -->
-        <div class="container-fluid" id="nompHome">
+        <div class="container-fluid" id="pigraAbout">
             <div class="container">
                 <div class="row g-0">
                     <div class="col-12 col-lg-3">
@@ -179,7 +132,7 @@ facere tempora rerum, eligendi veritatis nesciunt cum?
                         <div class="about-content h-100 pt-6 ps-6 pb-6">
                             <div class="row g-5">
                                 <div class="col-xl-5">
-                                    <div class="about-img bg-light p-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 70%; visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
+                                    <div class="about-img bg-light p-4 wow fadeInUp" data-wow-delay="0.1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeInUp;">
                                         <img src="{% static 'resume/about.jpg' %}" class="img-fluid w-100" alt="Image">
                                         <div class="sosial-icon">
                                             <a class="btn btn-primary btn-sm-square mb-3" href="#"><i class="fab fa-facebook-f text-white"></i></a>
@@ -220,7 +173,7 @@ incidunt voluptatum eveniet numquam vel facilis sit similique a mollitia
 
 
         <!-- Education Start -->
-        <div class="container-fluid" id="nompHome">
+        <div class="container-fluid">
             <div class="container">
                 <div class="row g-0">
                     <div class="col-lg-3">
@@ -234,7 +187,7 @@ incidunt voluptatum eveniet numquam vel facilis sit similique a mollitia
                     <div class="col-lg-9">
                         <div class="education-content h-100 pt-6 ps-6 pb-6">
                             <div class="row g-4">
-                                <div class="col-8">
+                                <div class="col-12">
                                     <div class="education-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
                                         <div class="d-flex align-items-center mb-3">
                                             <p class="fs-5 mb-0 me-4">National University</p>
@@ -250,7 +203,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                         </p>
                                     </div>
                                 </div>
-                                <div class="col-8">
+                                <div class="col-12">
                                     <div class="education-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.3s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
                                         <div class="d-flex align-items-center mb-3">
                                             <p class="fs-5 mb-0 me-4">Webster College</p>
@@ -266,7 +219,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                         </p>
                                     </div>
                                 </div>
-                                <div class="col-8">
+                                <div class="col-12">
                                     <div class="education-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.5s" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
                                         <div class="d-flex align-items-center mb-3">
                                             <p class="fs-5 mb-0 me-4">Oxford University</p>
@@ -291,7 +244,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
         <!-- Education End -->
 
         <!-- Experience Start -->
-        <div class="container-fluid" id="nompHome">
+        <div class="container-fluid">
             <div class="container">
                 <div class="row g-0">
                     <div class="col-lg-3">
@@ -305,7 +258,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                     <div class="col-lg-9">
                         <div class="experience-content h-100 pt-6 ps-6 pb-6">
                             <div class="row g-4">
-                                <div class="col-8">
+                                <div class="col-12">
                                     <div class="experience-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
                                         <div class="d-flex align-items-center mb-3">
                                             <p class="fs-5 mb-0 me-4">Historian</p>
@@ -321,7 +274,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                         </p>
                                     </div>
                                 </div>
-                                <div class="col-8">
+                                <div class="col-12">
                                     <div class="experience-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.3s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
                                         <div class="d-flex align-items-center mb-3">
                                             <p class="fs-5 mb-0 me-4">Historian</p>
@@ -337,7 +290,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                         </p>
                                     </div>
                                 </div>
-                                <div class="col-8">
+                                <div class="col-12">
                                     <div class="experience-item rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.5s" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
                                         <div class="d-flex align-items-center mb-3">
                                             <p class="fs-5 mb-0 me-4">Historian</p>
@@ -363,7 +316,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
 
 
         <!-- Skills Start -->
-        <div class="container-fluid" id="nompHome">
+        <div class="container-fluid">
             <div class="container">
                 <div class="row g-0">
                     <div class="col-lg-3">
@@ -377,7 +330,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                     <div class="col-lg-9">
                         <div class="skills-content h-100 pt-6 ps-6 pb-6">
                             <div class="row g-4">
-                                <div class="col-6 col-md-4 col-lg-4 col-xl-2">
+                                <div class="col-6 col-md-4 col-lg-4 col-xl-3">
                                     <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
                                         <div class="text-primary text-center mb-3"><span class="fab fa-wordpress fa-3x"></span></div>
                                         <div class="counter-counting d-flex justify-content-center">
@@ -387,7 +340,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                         <p class="mb-0">WordPress</p>
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-4 col-lg-6 col-xl-2" style="margin-left:3%;">
+                                <div class="col-6 col-md-4 col-lg-4 col-xl-3">
                                     <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.3s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
                                         <div class="text-primary text-center mb-3"><span class="fab fa-figma fa-3x"></span></div>
                                         <div class="counter-counting d-flex justify-content-center">
@@ -397,7 +350,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                         <p class="mb-0">Figma</p>
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-4 col-lg-4 col-xl-2" style="margin-left:3%;">
+                                <div class="col-6 col-md-4 col-lg-4 col-xl-3">
                                     <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.5s" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
                                         <div class="text-primary text-center mb-3"><span class="fab fa-sketch fa-3x"></span></div>
                                         <div class="counter-counting d-flex justify-content-center">
@@ -407,7 +360,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                         <p class="mb-0">Sketch</p>
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-4 col-lg-4 col-xl-2" style="margin-left:3%;">
+                                <div class="col-6 col-md-4 col-lg-4 col-xl-3">
                                     <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.7s" style="visibility: hidden; animation-delay: 0.7s; animation-name: none;">
                                         <div class="text-primary text-center mb-3"><span class="fab fa-elementor fa-3x"></span></div>
                                         <div class="counter-counting d-flex justify-content-center">
@@ -417,7 +370,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                         <p class="mb-0">Elementor</p>
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-4 col-lg-4 col-xl-2" style="margin-left:3%;">
+                                <div class="col-6 col-md-4 col-lg-4 col-xl-3">
                                     <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
                                         <div class="text-primary text-center mb-3"><span class="fab fa-js-square fa-3x"></span></div>
                                         <div class="counter-counting d-flex justify-content-center">
@@ -427,7 +380,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                         <p class="mb-0">JavaScript</p>
                                     </div>
                                 </div>
-                                <div class="col-6 col-md-4 col-lg-4 col-xl-2">
+                                <div class="col-6 col-md-4 col-lg-4 col-xl-3">
                                     <div class="skills-item text-center rounded p-4 h-100 wow fadeInUp" data-wow-delay="0.3s" style="visibility: hidden; animation-delay: 0.3s; animation-name: none;">
                                         <div class="text-primary text-center mb-3"><span class="fab fa-html5 fa-3x"></span></div>
                                         <div class="counter-counting d-flex justify-content-center">
@@ -447,7 +400,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
 
 
         <!-- Service Start -->
-        <div class="container-fluid" id="nompHome">
+        <div class="container-fluid" id="pigraService">
             <div class="container">
                 <div class="row g-0">
                     <div class="col-lg-3">
@@ -458,7 +411,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-9">
                         <div class="service-content h-100 pt-6 ps-6 pb-6">
                             <div class="row g-4">
                                 <div class="col-12">
@@ -534,7 +487,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
 
 
         <!-- Portfolio Start -->
-        <div class="container-fluid" id="nompHome">
+        <div class="container-fluid" id="pigraPortfolio">
             <div class="container">
                 <div class="row g-0">
                     <div class="col-lg-3">
@@ -545,7 +498,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-9">
                         <div class="portfolio-content h-100 pt-6 ps-6 pb-6">
                             <div class="portfolio-item py-5 border-bottom wow fadeInUp" data-wow-delay="0.1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
                                 <div class="row g-4 align-items-center">
@@ -616,7 +569,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
 
 
         <!-- Blog Start -->
-        {% comment %} <div class="container-fluid" id="nompHome">
+        <div class="container-fluid">
             <div class="container">
                 <div class="row g-0">
                     <div class="col-lg-3">
@@ -627,7 +580,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-9">
                         <div class="blog-content h-100 pt-6 ps-6 pb-6">
                             <div class="row g-4">
                                 <div class="col-xl-6">
@@ -640,7 +593,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-8">
                                                 <div class="h-100">
                                                     <p class="text-body mb-3"><i class="fa fa-calendar-alt me-2"></i> November 12, 2024</p>
                                                     <a href="#" class="d-inline-block h4 mb-4" data-bs-toggle="modal" data-bs-target="#blogModal">Secrets of the Mobile Application</a>
@@ -663,7 +616,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                                     </a>
                                                 </div>
                                             </div>
-                                            <div class="col-6">
+                                            <div class="col-8">
                                                 <div class="h-100">
                                                     <p class="text-body mb-3"><i class="fa fa-calendar-alt me-2"></i> November 18, 2024</p>
                                                     <a href="#" class="d-inline-block h4 mb-4" data-bs-toggle="modal" data-bs-target="#blogModal">How to Create Quality Figma Design</a>
@@ -733,12 +686,12 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                     </div>
                 </div>
             </div>
-        </div> {% endcomment %}
+        </div>
         <!-- Blog End -->
 
 
         <!-- Blog Modal Start -->
-        {% comment %} <div class="modal fade" id="blogModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="blogModalLabel" aria-hidden="true">
+        <div class="modal fade" id="blogModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="blogModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-scrollable">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -756,14 +709,13 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                 <p class="me-3"><i class="far fa-calendar-alt me-1"></i>01-Jan-2045</p>
                             </div>
                             <p>Lorem ipsum dolor sit amet, consectetur 
-                                adipiscing elit. Ut condimentum efficitur tellus a tincidunt. Duis 
-                                venenatis tortor at lorem tincidunt lobortis. Nulla sem eros, aliquam 
-                                non suscipit eget, hendrerit ut massa. Nulla non bibendum odio, ut 
-                                fringilla diam. Integer mollis vel tellus et suscipit. Sed vitae 
-                                condimentum risus. Sed elit sem, tristique vitae ex at, congue mattis 
-                                metus. Cras non nulla efficitur purus blandit cursus quis sed augue. 
-                                Cras leo ipsum, commodo quis tortor et.
-                            </p>
+adipiscing elit. Ut condimentum efficitur tellus a tincidunt. Duis 
+venenatis tortor at lorem tincidunt lobortis. Nulla sem eros, aliquam 
+non suscipit eget, hendrerit ut massa. Nulla non bibendum odio, ut 
+fringilla diam. Integer mollis vel tellus et suscipit. Sed vitae 
+condimentum risus. Sed elit sem, tristique vitae ex at, congue mattis 
+metus. Cras non nulla efficitur purus blandit cursus quis sed augue. 
+Cras leo ipsum, commodo quis tortor et.</p>
                             <ul>
                                 <li class="mb-2 fw-bold">
                                     Fusce suscipit auctor diam
@@ -781,22 +733,21 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                 </li>
                             </ul>
                             <p>Mauris in placerat leo. Fusce euismod id 
-                                risus vel ultrices. In diam elit, laoreet at lectus id, interdum mollis 
-                                augue. Curabitur sed turpis erat. Phasellus elementum augue at tristique
-                                sagittis. Donec at lacus pellentesque, tincidunt elit id, malesuada 
-                                velit. Pellentesque non ex vel nulla lacinia cursus in eget justo. Cras 
-                                tempor malesuada sem, non hendrerit massa consectetur vel.
-                            </p>
+risus vel ultrices. In diam elit, laoreet at lectus id, interdum mollis 
+augue. Curabitur sed turpis erat. Phasellus elementum augue at tristique
+ sagittis. Donec at lacus pellentesque, tincidunt elit id, malesuada 
+velit. Pellentesque non ex vel nulla lacinia cursus in eget justo. Cras 
+tempor malesuada sem, non hendrerit massa consectetur vel.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> {% endcomment %}
+        </div>
         <!-- Blog Modal End -->
 
 
         <!-- Testimonial Start -->
-        {% comment %} <div class="container-fluid" id="nompHome">
+        <div class="container-fluid">
             <div class="container">
                 <div class="row g-0">
                     <div class="col-lg-3">
@@ -831,10 +782,9 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                     </div>
                                     <div class="text-sm-center">
                                         <p>Lorem ipsum dolor, sit amet 
-                                            consectetur adipisicing elit. Asperiores nemo facilis tempora esse 
-                                            explicabo sed! Dignissimos quia ullam pariatur blanditiis sed 
-                                            voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
-                                                                                    
+consectetur adipisicing elit. Asperiores nemo facilis tempora esse 
+explicabo sed! Dignissimos quia ullam pariatur blanditiis sed 
+voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
                                         </p>
                                         <div class="d-flex justify-content-sm-center">
                                             <i class="fas fa-star text-primary"></i>
@@ -862,9 +812,9 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                     </div>
                                     <div class="text-sm-center">
                                         <p>Lorem ipsum dolor, sit amet 
-                                                consectetur adipisicing elit. Asperiores nemo facilis tempora esse 
-                                                explicabo sed! Dignissimos quia ullam pariatur blanditiis sed 
-                                                voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
+consectetur adipisicing elit. Asperiores nemo facilis tempora esse 
+explicabo sed! Dignissimos quia ullam pariatur blanditiis sed 
+voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
                                         </p>
                                         <div class="d-flex justify-content-sm-center">
                                             <i class="fas fa-star text-primary"></i>
@@ -892,9 +842,9 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                     </div>
                                     <div class="text-sm-center">
                                         <p>Lorem ipsum dolor, sit amet 
-                                            consectetur adipisicing elit. Asperiores nemo facilis tempora esse 
-                                            explicabo sed! Dignissimos quia ullam pariatur blanditiis sed 
-                                            voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
+consectetur adipisicing elit. Asperiores nemo facilis tempora esse 
+explicabo sed! Dignissimos quia ullam pariatur blanditiis sed 
+voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
                                         </p>
                                         <div class="d-flex justify-content-sm-center">
                                             <i class="fas fa-star text-primary"></i>
@@ -922,9 +872,9 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                     </div>
                                     <div class="text-sm-center">
                                         <p>Lorem ipsum dolor, sit amet 
-                                            consectetur adipisicing elit. Asperiores nemo facilis tempora esse 
-                                            explicabo sed! Dignissimos quia ullam pariatur blanditiis sed 
-                                            voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
+consectetur adipisicing elit. Asperiores nemo facilis tempora esse 
+explicabo sed! Dignissimos quia ullam pariatur blanditiis sed 
+voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
                                         </p>
                                         <div class="d-flex justify-content-sm-center">
                                             <i class="fas fa-star text-primary"></i>
@@ -952,9 +902,9 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                     </div>
                                     <div class="text-sm-center">
                                         <p>Lorem ipsum dolor, sit amet 
-                                                consectetur adipisicing elit. Asperiores nemo facilis tempora esse 
-                                                explicabo sed! Dignissimos quia ullam pariatur blanditiis sed 
-                                                voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
+consectetur adipisicing elit. Asperiores nemo facilis tempora esse 
+explicabo sed! Dignissimos quia ullam pariatur blanditiis sed 
+voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
                                         </p>
                                         <div class="d-flex justify-content-sm-center">
                                             <i class="fas fa-star text-primary"></i>
@@ -982,9 +932,9 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                     </div>
                                     <div class="text-sm-center">
                                         <p>Lorem ipsum dolor, sit amet 
-                                            consectetur adipisicing elit. Asperiores nemo facilis tempora esse 
-                                            explicabo sed! Dignissimos quia ullam pariatur blanditiis sed 
-                                            voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
+consectetur adipisicing elit. Asperiores nemo facilis tempora esse 
+explicabo sed! Dignissimos quia ullam pariatur blanditiis sed 
+voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
                                         </p>
                                         <div class="d-flex justify-content-sm-center">
                                             <i class="fas fa-star text-primary"></i>
@@ -1012,9 +962,9 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                     </div>
                                     <div class="text-sm-center">
                                         <p>Lorem ipsum dolor, sit amet 
-                                            consectetur adipisicing elit. Asperiores nemo facilis tempora esse 
-                                            explicabo sed! Dignissimos quia ullam pariatur blanditiis sed 
-                                            voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
+consectetur adipisicing elit. Asperiores nemo facilis tempora esse 
+explicabo sed! Dignissimos quia ullam pariatur blanditiis sed 
+voluptatum. Totam aut quidem laudantium tempora. Minima, saepe earum!
                                         </p>
                                         <div class="d-flex justify-content-sm-center">
                                             <i class="fas fa-star text-primary"></i>
@@ -1029,12 +979,12 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                     </div>
                 </div>
             </div>
-        </div> {% endcomment %}
+        </div>
         <!-- Testimonial End -->
 
 
         <!-- Contact Start -->
-        <div class="container-fluid" id="nompHome">
+        <div class="container-fluid" id="pigraContact">
             <div class="container">
                 <div class="row g-0">
                     <div class="col-lg-3">
@@ -1045,7 +995,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-8">
+                    <div class="col-lg-9">
                        <div class="contact-content h-100 pt-6 ps-6 pb-6">
                             <div class="bg-light p-4">
                                 <div class="row g-5">
@@ -1131,8 +1081,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
                                     </div>
                                     <div class="col-12 wow fadeInUp" data-wow-delay="0.5s" style="visibility: hidden; animation-delay: 0.5s; animation-name: none;">
                                         <div class="rounded">
-                                            <iframe class="rounded w-100" style="height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224012.21621449082!2d77.32008968352187!3d28.68393621708735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf1bb41c50fdf%3A0xe6f06fd26a7798ba!2sGhaziabad%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1768649900173!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                            {% comment %} <iframe class="rounded w-100" style="height: 400px;" src="<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224012.21621449082!2d77.32008968352187!3d28.68393621708735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf1bb41c50fdf%3A0xe6f06fd26a7798ba!2sGhaziabad%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1768649900173!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> {% endcomment %}
+                                            <iframe class="rounded w-100" style="height: 400px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387191.33750346623!2d-73.97968099999999!3d40.6974881!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1694259649153!5m2!1sen!2sbd" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                         </div>
                                     </div>
                                 </div>
@@ -1146,78 +1095,41 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
 
 
         <!-- Footer Start -->
-        <footer class="apple-footer">
-
-            <div class="footer-content">
-          
-              <!-- Column 1 -->
-              <div class="footer-column">
-                <h4>NomP</h4>
-                <a href="#">About</a>
-                <a href="#">Projects</a>
-                <a href="#">Resume</a>
-                <a href="#">Contact</a>
-              </div>
-          
-              <!-- Column 2 -->
-              <div class="footer-column">
-                <h4>Work</h4>
-                <a href="#">Data Science</a>
-                <a href="#">Analytics</a>
-                <a href="#">Machine Learning</a>
-                <a href="#">Engineering</a>
-              </div>
-          
-              <!-- Column 3 -->
-              <div class="footer-column">
-                <h4>Explore</h4>
-                <a href="#">Blog</a>
-                <a href="#">Case Studies</a>
-                <a href="#">Open Source</a>
-                <a href="#">Research</a>
-              </div>
-          
-              <!-- Column 4 -->
-              {% comment %} <div class="footer-column">
-                <h4>Recipes</h4>
-                <a href="#">Breads</a>
-                <a href="#">Desserts</a>
-                <a href="#">Healthy</a>
-                <a href="#">Signature</a>
-              </div> {% endcomment %}
-          
-              <!-- Column 5 -->
-              <div class="footer-column">
-                <h4>Connect</h4>
-                <a href="#">GitHub</a>
-                <a href="#">LinkedIn</a>
-                <a href="#">Email</a>
-                <a href="#">Instagram</a>
-              </div>
-          
+        <div class="container-fluid footer bg-dark border-bottom-0">
+            <div class="container wow fadeIn" data-wow-delay="0.1s" style="visibility: hidden; animation-delay: 0.1s; animation-name: none;">
+                <div class="row g-0">
+                    <div class="col-12">
+                       <div class="footer-content h-100 pt-6 ps-6 pb-6">
+                            <div class="row g-4 align-items-center">
+                                <div class="col-12 text-center">
+                                    <div class="d-flex justify-content-center">
+                                        <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-facebook-f"></i></a>
+                                        <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-twitter"></i></a>
+                                        <a class="btn btn-light btn-md-square me-3" href=""><i class="fab fa-instagram"></i></a>
+                                        <a class="btn btn-light btn-md-square me-0" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-body me-2"></i>Your Site Name</a>, All right reserved.</span>
+                                </div>
+                                <div class="col-12 text-center text-body">
+                                    Designed By <a class="border-bottom text-white" href="https://htmlcodex.com/">HTML Codex</a>
+                                </div>
+                            </div>
+                       </div>        
+                    </div>
+                </div>
             </div>
-          
-            <!-- Legal Strip -->
-            <div class="footer-legal">
-              <p>Copyright © 2021 Night Owl Morning Panda. All rights reserved.</p>
-              <div class="legal-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Use</a>
-                <a href="#">Legal</a>
-                <a href="#">Sitemap</a>
-              </div>
-            </div>
-          
-        </footer>
+        </div>
         <!-- Footer End -->
-        
-          
+
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-primary btn-lg-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
 
-        <script src="https://kit.fontawesome.com/560a40e111.js" crossorigin="anonymous"></script>
+        
         <!-- JavaScript Libraries -->
+        <script src="https://kit.fontawesome.com/560a40e111.js" crossorigin="anonymous"></script>
         <script src="{% static 'resume/jquery.min.js' %}" type="text/javascript"></script>
         <script src="{% static 'resume/bootstrap.bundle.min.js' %}" type="text/javascript"></script>
         <script src="{% static 'resume/wow.min.js' %}" type="text/javascript"></script>
@@ -1226,6 +1138,7 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
         <script src="{% static 'resume/counterup.min.js' %}" type="text/javascript"></script>
         <script src="{% static 'resume/lightbox.min.js' %}" type="text/javascript"></script>
         <script src="{% static 'resume/owl.carousel.min.js' %}" type="text/javascript"></script>
+        
 
         <!-- Template Javascript -->
         <script src="{% static 'resume/main.js' %}" type="text/javascript"></script>
@@ -1233,20 +1146,8 @@ repudiandae dignissimos magnam? Dicta ab possimus tempora nobis.
         <!-- Contact Form Javascript -->
         <script src="{% static 'resume/validation.form.js' %}" type="text/javascript"></script>
         <script src="{% static 'resume/contact.form.js' %}" type="text/javascript"></script>
-    {% comment %} <script type="text/javascript">(function(){'use strict';document.addEventListener('contextmenu',function(e){try{e.preventDefault()}catch(t){}},!0);document.addEventListener('selectstart',function(e){try{e.preventDefault()}catch(t){}},!0);document.addEventListener('dragstart',function(e){try{e.preventDefault()}catch(t){}},!0);document.addEventListener('keydown',function(e){try{var k=(e.key||'').toLowerCase();if(e.key==='F12'||(e.ctrlKey&&e.shiftKey&&['i','j','c'].indexOf(k)!==-1)||(e.ctrlKey&&['u','s','c','x','a','p'].indexOf(k)!==-1)){e.preventDefault();e.stopPropagation();}}catch(t){}},!0);(function(){var T=160,O=!1;setInterval(function(){try{if(Math.abs(window.outerWidth-window.innerWidth)>T||Math.abs(window.outerHeight-window.innerHeight)>T){if(!O){O=!0;document.documentElement.innerHTML='<div style=\"text-align:center;font-family:system-ui,sans-serif;margin-top:30vh\">Access Denied</div>';}}else O=!1}catch(t){}},1e3)})();try{if(window.top!==window.self){var r=(document.referrer||'').toLowerCase();if(r.indexOf('htmlcodex.com')!==-1){}else{try{window.top.location=window.location.href}catch(t){document.documentElement.innerHTML='<div style=\"text-align:center;font-family:system-ui,sans-serif;margin-top:30vh\">Embedding not allowed</div>';}}}}catch(t){} })();</script> {% endcomment %}
+    <script type="text/javascript">(function(){'use strict';document.addEventListener('contextmenu',function(e){try{e.preventDefault()}catch(t){}},!0);document.addEventListener('selectstart',function(e){try{e.preventDefault()}catch(t){}},!0);document.addEventListener('dragstart',function(e){try{e.preventDefault()}catch(t){}},!0);document.addEventListener('keydown',function(e){try{var k=(e.key||'').toLowerCase();if(e.key==='F12'||(e.ctrlKey&&e.shiftKey&&['i','j','c'].indexOf(k)!==-1)||(e.ctrlKey&&['u','s','c','x','a','p'].indexOf(k)!==-1)){e.preventDefault();e.stopPropagation();}}catch(t){}},!0);(function(){var T=160,O=!1;setInterval(function(){try{if(Math.abs(window.outerWidth-window.innerWidth)>T||Math.abs(window.outerHeight-window.innerHeight)>T){if(!O){O=!0;document.documentElement.innerHTML='<div style=\"text-align:center;font-family:system-ui,sans-serif;margin-top:30vh\">Access Denied</div>';}}else O=!1}catch(t){}},1e3)})();try{if(window.top!==window.self){var r=(document.referrer||'').toLowerCase();if(r.indexOf('htmlcodex.com')!==-1){}else{try{window.top.location=window.location.href}catch(t){document.documentElement.innerHTML='<div style=\"text-align:center;font-family:system-ui,sans-serif;margin-top:30vh\">Embedding not allowed</div>';}}}}catch(t){} })();</script>
 <script defer="defer" src="vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;6943b1105b49429a8ca1fd0740a2375b&quot;,&quot;r&quot;:1,&quot;server_timing&quot;:{&quot;name&quot;:{&quot;cfCacheStatus&quot;:true,&quot;cfEdge&quot;:true,&quot;cfExtPri&quot;:true,&quot;cfL4&quot;:true,&quot;cfOrigin&quot;:true,&quot;cfSpeedBrain&quot;:true},&quot;location_startswith&quot;:null}}" crossorigin="anonymous"></script>
 
-<script>
-    /* Shrink navbar on scroll */
-const navbar = document.getElementById("navbar");
-
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 50) {
-    navbar.classList.add("shrink");
-  } else {
-    navbar.classList.remove("shrink");
-  }
-});
-</script>
 
 <div id="lightboxOverlay" tabindex="-1" class="lightboxOverlay" style="display: none;"></div><div id="lightbox" tabindex="-1" class="lightbox" style="display: none;"><div class="lb-outerContainer"><div class="lb-container"><img class="lb-image" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==" alt=""><div class="lb-nav"><a class="lb-prev" role="button" tabindex="0" aria-label="Previous image" href=""></a><a class="lb-next" role="button" tabindex="0" aria-label="Next image" href=""></a></div><div class="lb-loader"><a class="lb-cancel" role="button" tabindex="0"></a></div></div></div><div class="lb-dataContainer"><div class="lb-data"><div class="lb-details"><span class="lb-caption"></span><span class="lb-number"></span></div><div class="lb-closeContainer"><a class="lb-close" role="button" tabindex="0"></a></div></div></div></div></body></html>
