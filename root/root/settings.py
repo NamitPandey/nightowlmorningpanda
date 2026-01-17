@@ -26,7 +26,7 @@ SECRET_KEY = data['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["nightowlmorningpanda.pythonanywhere.com"]
+ALLOWED_HOSTS = ["nightowlmorningpanda.pythonanywhere.com", "127.0.0.1"]
 
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 

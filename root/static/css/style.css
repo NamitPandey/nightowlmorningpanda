@@ -1,21 +1,56 @@
-/* customizable snowflake styling */
-.loader button {
-    width: 50%;
-    height: 100px;
-    position: fixed;
-    left: 50%;
-    top: 45%;
-    transform: translateY(-50%);
-    transform: translateX(-50%);
-    background: center no-repeat #fff;
-    z-index: 9999999999999999999999;
-    font-size: 50px;
-    outline: none;
+/* ==========================
+   GLOBAL FIXES
+========================== */
+
+* {
     box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #FFDAB9;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================
+   LOADER BUTTON
+========================== */
+
+.loader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: url(img/back.png) center no-repeat #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader button {
+    width: 90%;
+    max-width: 400px;
+    height: 90px;
+    background: center no-repeat #fff;
+    z-index: 999999;
+    font-size: 36px;
+    outline: none;
     border: none;
     border-radius: .3em;
     text-transform: uppercase;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(110, 80, 20, .4),
+    box-shadow:
+        0 3px 6px rgba(0, 0, 0, .16),
+        0 3px 6px rgba(110, 80, 20, .4),
         inset 0 -2px 5px 1px rgba(139, 66, 8, 1),
         inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
     background-image: linear-gradient(160deg, #a54e07, #b47e11, #fef1a2, #bc881b, #a54e07);
@@ -25,105 +60,151 @@
     cursor: pointer;
     transition: all .2s ease-in-out;
     background-size: 100% 100%;
-    background-position: center;
 }
 
-.golden-btn:focus,
-.golden-btn:hover {
+/* Hover effect */
+.loader button:hover {
     background-size: 150% 150%;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23),
-        inset 0 -2px 5px 1px #b17d10,
-        inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
-    border: 1px solid rgba(165, 93, 7, .6);
-    color: rgba(120, 50, 5, .8);
 }
 
-.golden-btn:active {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(110, 80, 20, .4),
-        inset 0 -2px 5px 1px #b17d10,
-        inset 0 -1px 1px 3px rgba(250, 227, 133, 1);
-}
-
-.loader {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-    background: url(img/back.png) center no-repeat #000;
-}
+/* ==========================
+   MUSIC
+========================== */
 
 .song {
     display: none;
 }
 
-body {
-    background-color: #FFDAB9;
-}
-
-img {
-    width: 100%;
-}
+/* ==========================
+   BALLOON BORDER
+========================== */
 
 .balloon-border {
     position: fixed;
-    top: 100%;
+    bottom: 0;
     opacity: 0.5;
-    z-index: 99999999;
+    width: 100%;
+    z-index: 9999;
 }
+
+/* ==========================
+   NAME AREA
+========================== */
 
 .area {
     text-align: center;
-    font-size: 70px;
+    font-size: 64px;
     color: #C4515C;
-    letter-spacing: -7px;
+    letter-spacing: -4px;
     font-weight: 700;
     text-transform: uppercase;
     animation: spin 2s ease-out infinite;
     text-shadow: 0px 0px 5px #fff, 0px 0px 7px #fff;
+    padding: 10px;
+    word-wrap: break-word;
 }
 
 #nae {
     text-transform: capitalize;
 }
 
+/* ==========================
+   CONFETTI
+========================== */
+
 #confetti {
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     height: 100%;
     width: 100%;
+    pointer-events: none;
 }
+
+/* ==========================
+   TYPING CARD
+========================== */
+
+.type-wrap {
+    font-size: 24px;
+    color: #C4515C;
+    padding: 10px;
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+/* ==========================
+   CAKE
+========================== */
+
+.cake {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.cake img {
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+/* ==========================
+   ANIMATION
+========================== */
 
 @keyframes spin {
     0% {
         transform: rotateZ(0);
     }
-
     25% {
-        transform: rotateZ(10deg);
+        transform: rotateZ(5deg);
     }
-
     50% {
         transform: rotateZ(0deg);
     }
-
     75% {
-        transform: rotateZ(-10deg);
+        transform: rotateZ(-5deg);
     }
 }
 
-.type-wrap {
-    font-size: 25px;
-    color: #C4515C;
+/* ==========================
+   MOBILE OPTIMIZATION
+========================== */
 
+@media (max-width: 768px) {
+
+    .area {
+        font-size: 36px;
+        letter-spacing: -2px;
+    }
+
+    .type-wrap {
+        font-size: 18px;
+    }
+
+    .loader button {
+        height: 75px;
+        font-size: 26px;
+    }
+
+    .cake img {
+        max-width: 200px;
+    }
 }
 
-.cake {
-    transform: translateY(-50%);
-    transform: translateX(-50%);
-    left: 50%;
-    position: absolute;
-    padding-top: 250px;
+@media (max-width: 480px) {
+
+    .area {
+        font-size: 30px;
+    }
+
+    .type-wrap {
+        font-size: 16px;
+    }
+
+    .loader button {
+        height: 65px;
+        font-size: 22px;
+    }
 }
